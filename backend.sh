@@ -95,4 +95,4 @@ mysql -h mysql.premdas.online -uroot -pExpenseApp@1 < /app/schema/backend.sql
 VALIDATE $? "setting root password"
 
 systemctl restart backend 
-VALIDATE $? " resetinng backend "
+VALIDATE $? " resetinng backend"
