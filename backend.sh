@@ -48,7 +48,8 @@ then
   useradd expense &>>$LOG_FILE_NAME
   VALIDATE $? "adding expense"
 else
- echo -e"expense user allredy exist.... $Y SKPPING $N" 
+ echo -e "expense user allredy exist.... $Y SKPPING $N"
+
 fi
 
 mkdir /app &>>$LOG_FILE_NAME
