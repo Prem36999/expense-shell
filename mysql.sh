@@ -29,7 +29,7 @@ CHECK_ROOT(){
 
 }   
  
-echo "script started excuting at $TIMESTAMP" &>>$LOG_FILE_NAME 
+echo "script started excuting at $TIMESTAMP " &>>$LOG_FILE_NAME 
 
 CHECK_ROOT
 
