@@ -52,8 +52,14 @@ else
 
 fi
 
-mkdir /app 
-VALIDATE $? "creat directoryr"
+app dairectory 
+if [ $? -ne 0 ]
+then 
+  mkdir /app 
+  VALIDATE $? "creat directoryr"
+else
+ echo "directory allredy exist ... $Y SKPPING $N "
+fi   
 
 curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip &>>$LOG_FILE_NAME
 VALIDATE $? " downloding backend "
