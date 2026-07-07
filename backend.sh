@@ -63,7 +63,7 @@ VALIDATE $? "cp"
 npm install &>>$LOG_FILE_NAME
 VALIDATE $? "installing npm"
 
-cp /c/devops/daws6s/repos/expense-shell/backend.servece /etc/systemd/system/backend.service &>>$LOG_FILE_NAME
+cp /home/ec2-user/expense-shell/backend.servece /etc/systemd/system/backend.service &>>$LOG_FILE_NAME
 VALIDATE $? " editing config"
 
 systemctl daemon-reload &>>$LOG_FILE_NAME
@@ -82,4 +82,4 @@ mysql -h mysql.prem.online -uroot -pExpenseApp@1 < /app/schema/backend.sql
 VALIDATE $? "setting root password"
 
 systemctl restart backend 
-VALIDATE $? " resetinng backend"
+VALIDATE $? " resetinng backend "
