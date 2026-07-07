@@ -63,7 +63,7 @@ VALIDATE $? "cp"
 npm install &>>$LOG_FILE_NAME
 VALIDATE $? "installing npm"
 
-vim /etc/systemd/system/backend.service &>>$LOG_FILE_NAME
+cp /c/devops/daws6s/repos/expense-shell/backend.servece /etc/systemd/system/backend.service &>>$LOG_FILE_NAME
 VALIDATE $? " editing config"
 
 systemctl daemon-reload &>>$LOG_FILE_NAME
