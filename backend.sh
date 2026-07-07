@@ -42,8 +42,14 @@ VALIDATE $? "ENABLING nodejs"
 dnf install nodejs -y &>>$LOG_FILE_NAME
 VALIDATE $? " installing nodejs"
 
-useradd expense
-VALIDATE $? "adding expense"
+id expense &>>$LOG_FILE_NAME
+if [ $? -ne 0 ] 
+then
+  useradd expense &>>$LOG_FILE_NAME
+  VALIDATE $? "adding expense"
+else
+ echo -e"expense user allredy exist.... $Y SKPPING $N" 
+fi
 
 mkdir /app &>>$LOG_FILE_NAME
 VALIDATE $? "creat directoryr"
