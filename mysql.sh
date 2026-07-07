@@ -52,4 +52,5 @@ then
  VALIDATE $? "setting root password "
 else 
   echo -e "MYSQL root password allredy setup ....$Y SKPPING $N"
+fi  
 
