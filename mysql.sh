@@ -38,12 +38,12 @@ VALIDATE $? "install mysql"
 
 
 systemctl enable mysqld &>>$LOG_FILE_NAME
-VALIDATE $? "enabling MYSQL"
+VALIDATE $? "enabling MYSQL server"
 
 systemctl start mysqld  &>>$LOG_FILE_NAME
-VALIDATE $? "start server"
+VALIDATE $? "start MYSQL server"
 
-mysql -h mysql.premdas.online -u root -pExpenseApp@1 -e 'show databases;'
+mysql -h mysql.premdas.online -u root -pExpenseApp@1 -e 'show databases;'&>>$LOG_FILE_NAME
 
 if [ $? -ne 0 ]
 then 
