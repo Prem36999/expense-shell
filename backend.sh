@@ -43,25 +43,25 @@ dnf install nodejs -y &>>$LOG_FILE_NAME
 VALIDATE $? " installing nodejs"
 
 useradd expense &>>$LOG_FILE_NAME
-VALIDATE $? "user name adding"
+VALIDATE $? "adding expense"
 
 mkdir /app &>>$LOG_FILE_NAME
-VALIDATE $? "creat app folder"
+VALIDATE $? "creat directoryr"
 
 curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip &>>$LOG_FILE_NAME
-VALIDATE $? " creating zuip file"
+VALIDATE $? " downloding backend "
 
 cd /app &>>$LOG_FILE_NAME
 VALIDATE $? "chainge poguisan"
 
 unzip /tmp/backend.zip &>>$LOG_FILE_NAME
-VALIDATE $? "unzip file"
+VALIDATE $? "unzip backend"
 
 cd /app &>>$LOG_FILE_NAME
 VALIDATE $? "cp"
 
 npm install &>>$LOG_FILE_NAME
-VALIDATE $? "installing npm"
+VALIDATE $? "installing dependenses"
 
 cp /home/ec2-user/expense-shell/backend.servece /etc/systemd/system/backend.service &>>$LOG_FILE_NAME
 VALIDATE $? " editing config"
