@@ -40,7 +40,7 @@ VALIDATE $? "install mysql"
 systemctl enable mysqld &>>$LOG_FILE_NAME
 VALIDATE $? "enabling MYSQL"
 
-systemctl start mysqld  &>>$LOG_FILE_NAM
+systemctl start mysqld  &>>$LOG_FILE_NAME
 VALIDATE $? "start server"
 
 # mysql -h mysql.premdas.online -u root -pExpenseApp@1 -e 'show databases;'
