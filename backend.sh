@@ -77,11 +77,6 @@ VALIDATE $? "installing dependenses"
 cp /home/ec2-user/expense-shell/backend.servece /etc/systemd/system/backend.service &>>$LOG_FILE_NAME
 VALIDATE $? " editing config"
 
-dnf install mysql -y &>>$LOG_FILE_NAME 
-VALIDATE $ " installing mysql"
-
-mysql -h mysql.premdas.online -uroot -pExpenseApp@1 < /app/schema/backend.sql 
-VALIDATE $? "setting root password"
 
 
 systemctl daemon-reload &>>$LOG_FILE_NAME
@@ -92,6 +87,12 @@ VALIDATE $? "starting backend"
 
 systemctl enable backend &>>$LOG_FILE_NAME
 VALIDATE $? " enabling backend"
+
+dnf install mysql -y 
+VALIDATE $ " installing mysql"
+
+mysql -h mysql.premdas.online -uroot -pExpenseApp@1 < /app/schema/backend.sql 
+VALIDATE $? "setting root password"
 
 systemctl restart backend 
 VALIDATE $? " resetinng backend "
