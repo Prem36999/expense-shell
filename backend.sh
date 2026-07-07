@@ -52,11 +52,11 @@ else
 
 fi
 
-app dairectory 
+directory 
 if [ $? -ne 0 ]
 then 
   mkdir /app 
-  VALIDATE $? "creat directoryr"
+  VALIDATE $? "creat directory"
 else
  echo "directory allredy exist ... $Y SKPPING $N "
 fi   
