@@ -55,7 +55,7 @@ fi
 directory 
 if [ $? -ne 0 ]
 then 
-  mkdir /app 
+  mkdir -p /app 
   VALIDATE $? "creat directory"
 else
  echo "directory allredy exist ... $Y SKPPING $N "
