@@ -43,16 +43,13 @@ VALIDATE $? "enabling MYSQL"
 systemctl start mysqld  &>>$LOG_FILE_NAME
 VALIDATE $? "start server"
 
-# mysql -h mysql.premdas.online -u root -pExpenseApp@1 -e 'show databases;'
+mysql -h mysql.premdas.online -u root -pExpenseApp@1 -e 'show databases;'
 
-# if [ $? -ne 0 ]
-# then 
-#  echo "MYSQL root passward not setup" &>>$LOG_FILE_NAM
-#  mysql_secure_installation --set-root-pass ExpenseApp@1 
-#  VALIDATE $? "setting root password "
-# else 
-#   echo -e "MYSQL root password allredy setup ....$Y SKPPING $N"
-# fi  
-
-mysql_secure_installation --set-root-pass ExpenseApp@1
-VALIDATE $? "setting root password"
+if [ $? -ne 0 ]
+then 
+ echo "MYSQL root passward not setup" &>>$LOG_FILE_NAM
+ mysql_secure_installation --set-root-pass ExpenseApp@1 
+ VALIDATE $? "setting root password "
+else 
+  echo -e "MYSQL root password allredy setup ....$Y SKPPING $N"
+fi  
