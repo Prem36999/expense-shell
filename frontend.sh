@@ -33,27 +33,27 @@ echo "script started excuting at $TIMESTAMP " &>>$LOG_FILE_NAME
 
 CHECK_ROOT
 
-dnf install nginx -y &>>$LOG_FILE_NAM
-VALIDATE $? "installing nginx" &>>$LOG_FILE_NAM
+dnf install nginx -y &>>$LOG_FILE_NAME
+VALIDATE $? "installing nginx" &>>$LOG_FILE_NAME
 
-systemctl enable nginx &>>$LOG_FILE_NAM
+systemctl enable nginx &>>$LOG_FILE_NAME
 VALIDATE $? "ennableing nginx server"
 
-systemctl start nginx &>>$LOG_FILE_NAM
+systemctl start nginx &>>$LOG_FILE_NAME
 VALIDATE $? "starting nginx server"
 
-rm -rf /usr/share/nginx/html/* &>>$LOG_FILE_NAM
+rm -rf /usr/share/nginx/html/* &>>$LOG_FILE_NAME
 VALIDATE $? "removing old versen"
 
-curl -o /tmp/frontend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2. &>>$LOG_FILE_NAM
+curl -o /tmp/frontend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2. &>>$LOG_FILE_NAME
 VALIDATE $? "donwloding new code"
 
-cd /usr/share/nginx/html &>>$LOG_FILE_NAM
+cd /usr/share/nginx/html &>>$LOG_FILE_NAME
 VALIDATE $? " chaing pozision"
 
-unzip /tmp/frontend.zip &>>$LOG_FILE_NAM
+unzip /tmp/frontend.zip &>>$LOG_FILE_NAME
 VALIDATE $? "unzipping"
 
-cp home/ec2-user/expense-shell/expense.conf /etc/nginx/default.d/expense.conf &>>$LOG_FILE_NAM
+cp home/ec2-user/expense-shell/expense.conf /etc/nginx/default.d/expense.conf &>>$LOG_FILE_NAME
 VALIDATE $? "editing congig"
 
