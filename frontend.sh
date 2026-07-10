@@ -51,7 +51,7 @@ VALIDATE $? "donwloding new code"
 cd /usr/share/nginx/html &>>$LOG_FILE_NAME
 VALIDATE $? " chaing pozision"
 
-unzip /tmp/frontend.zip &>>$LOG_FILE_NAME
+unzip /tmp/frontend.zip 
 VALIDATE $? "unzipping"
 
 cp home/ec2-user/expense-shell/expense.conf /etc/nginx/default.d/expense.conf &>>$LOG_FILE_NAME
