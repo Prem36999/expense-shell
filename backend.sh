@@ -91,7 +91,7 @@ VALIDATE $? " enabling backend"
 dnf install mysql -y 
 VALIDATE $ " installing mysql"
 
-mysql -h mysql.premdas.online -uroot -pExpenseApp@1 < /app/schema/backend.sql 
+mysql -h mysql.premdas.online -uroot -pExpenseApp@1 < /app/schema/backend.sql
 VALIDATE $? "setting root password"
 
 systemctl restart backend 
