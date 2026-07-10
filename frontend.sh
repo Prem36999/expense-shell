@@ -52,9 +52,6 @@ cd /usr/share/nginx/html &>>$LOG_FILE_NAME
 VALIDATE $? " chaing pozision"
 
 
-
-rm -rf /tmp/*
-
 unzip /tmp/frontend.zip
 VALIDATE $? "unzipping"
 
