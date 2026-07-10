@@ -61,3 +61,5 @@ VALIDATE $? "unzipping"
 cp home/ec2-user/expense-shell/expense.conf /etc/nginx/default.d/expense.conf &>>$LOG_FILE_NAME
 VALIDATE $? "editing congig"
 
+systemctl restart nginx 
+VALIDATE $? " restarting nginx"
