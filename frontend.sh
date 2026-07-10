@@ -51,7 +51,7 @@ VALIDATE $? "donwloding new code"
 cd /usr/share/nginx/html &>>$LOG_FILE_NAME
 VALIDATE $? " chaing pozision"
 
-cd /tmp/
+
 
 rm -rf /tmp/*
 
