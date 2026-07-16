@@ -59,4 +59,4 @@ cp home/ec2-user/expense-shell/expense.conf /etc/nginx/default.d/expense.conf &>
 VALIDATE $? "editing congig"
 
 systemctl restart nginx 
-VALIDATE $? " restarting nginx"
+VALIDATE $? " restarting nginx "
